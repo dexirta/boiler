@@ -1,21 +1,29 @@
-![Gatsby Logo](https://github.com/vercel/vercel/blob/master/packages/frameworks/logos/gatsby.svg)
+## Installation
 
-# Gatsby Example
+Install the dependencies:
 
-This directory is a brief example of a [Gatsby](https://www.gatsbyjs.org/) app with [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction) that can be deployed with Vercel and zero configuration.
+### `yarn install`
 
-## Deploy Your Own
+Run the development server:
 
-Deploy your own Gatsby project, along with Serverless Functions, with Vercel.
+### `yarn dev`
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/vercel/tree/master/examples/gatsby)
+Production build to `/public`:
 
-_Live Example: https://gatsby.now-examples.now.sh_
+### `yarn build`
 
-### How We Created This Example
+Cleanup cache (often fixes misc errors when run before `yarn dev`):
 
-To get started with Gatsby on Vercel, you can use the [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli/) to initialize the project:
+### `yarn clean`
 
-```shell
-$ gatsby new gatsby-site
-```
+## Content
+
+Each of the sections in the site are placed in `src/sections`. Data is usually separated out into objects/arrays to be rendered in the component.
+
+## SEO
+
+The component `src/components/common/SEO.js` handles all meta data and SEO content, modify the `SEO_DATA` variable to add the data automatically. For application manifest data and favicon, modify the `gatsby-plugin-manifest` configuration in `gatsby-config.js`.
+
+## Styling
+
+This project uses [styled-components]() to handle styling: `src/styles/theme.js` defines the styling base and `src/styles/GlobalStyles.js` includes basic element styles along with the CSS Reset.
