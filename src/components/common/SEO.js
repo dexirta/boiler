@@ -1,16 +1,16 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from 'react'
+import Helmet from 'react-helmet'
 
 const SEO_DATA = {
-  description: 'An absurd gatsby starter',
-  title: 'Absurd',
+  description: 'Zoltan Papp portfolio',
+  title: 'Zoltan Papp',
   url: '',
-  author: 'ajayns',
-  keywords: ['gatsby', 'site', 'absurd'],
+  author: 'Zoltan Papp',
+  keywords: ['portfolio', 'Zoltan Papp', 'electronics engineer', 'freelance'],
   img: '',
-  twitterId: '@ajayns_',
+  twitterId: '',
   facebookId: '',
-};
+}
 
 const SEO = () => {
   return (
@@ -36,7 +36,7 @@ const SEO = () => {
       <title>{SEO_DATA.title}</title>
       <html lang="en" />
     </Helmet>
-  );
-};
+  )
+}
 
-export default SEO;
+export default SEO

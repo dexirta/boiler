@@ -1,7 +1,7 @@
 const theme = {
   font: {
-    primary: `'Prata', serif`,
-    secondary: `'Average', serif`,
+    primary: `'Darker Grotesque', serif`,
+    secondary: `'Darker Grotesque', serif`,
   },
   font_size: {
     small: 'font-size: 20px; line-height: 30px',
@@ -20,7 +20,8 @@ const theme = {
       light: '#564F62',
       regular: '#211E26',
     },
-    primary: '#8bd8ed',
+    primary: '#302E63',
+    secondary: '#5AE692',
   },
   screen: {
     xs: '575px',
@@ -28,6 +29,6 @@ const theme = {
     md: '991px',
     lg: '1199px',
   },
-};
+}
 
-export default theme;
+export default theme

@@ -1,18 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from 'react'
+import styled from 'styled-components'
+import {StaticQuery, graphql} from 'gatsby'
+import Img from 'gatsby-image'
 
-import { Section, Container } from '@components/global';
+import {Section, Container} from '@components/global'
 
 const About = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
-        ) {
+        art_fast: file(sourceInstanceName: {eq: "art"}, name: {eq: "fast"}) {
           childImageSharp {
             fluid(maxWidth: 760) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -20,10 +17,7 @@ const About = () => (
           }
         }
 
-        art_learn: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
-        ) {
+        art_learn: file(sourceInstanceName: {eq: "art"}, name: {eq: "learn_yourself"}) {
           childImageSharp {
             fluid(maxWidth: 760) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -31,10 +25,7 @@ const About = () => (
           }
         }
 
-        art_ideas: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
-        ) {
+        art_ideas: file(sourceInstanceName: {eq: "art"}, name: {eq: "ideas"}) {
           childImageSharp {
             fluid(maxWidth: 760) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -43,17 +34,16 @@ const About = () => (
         }
       }
     `}
-    render={data => (
-      <Section id="about">
+    render={(data) => (
+      <Section className="block" id="about">
         <Container>
           <Grid>
             <div>
               <h2>Speed past the competition</h2>
               <p>
-                Gatsby.js builds the fastest possible website. Instead of
-                waiting to generate pages when requested, pre-build pages and
-                lift them into a global cloud of servers — ready to be delivered
-                instantly to your users wherever they are.
+                Gatsby.js builds the fastest possible website. Instead of waiting to generate pages when requested,
+                pre-build pages and lift them into a global cloud of servers — ready to be delivered instantly to your
+                users wherever they are.
               </p>
             </div>
             <Art>
@@ -67,9 +57,8 @@ const About = () => (
             <div>
               <h2>Nothing new to learn here</h2>
               <p>
-                Enjoy the power of the latest web technologies – React.js ,
-                Webpack , modern JavaScript and CSS and more — all set up and
-                waiting for you to start building.
+                Enjoy the power of the latest web technologies – React.js , Webpack , modern JavaScript and CSS and more
+                — all set up and waiting for you to start building.
               </p>
             </div>
           </Grid>
@@ -77,8 +66,7 @@ const About = () => (
             <div>
               <h2>Grow and build your ideas</h2>
               <p>
-                Waste no more time on tooling and performance. Focus on the the
-                site you want to build and nothing more.
+                Waste no more time on tooling and performance. Focus on the the site you want to build and nothing more.
                 <br />
                 <br />
                 Gatsby is fast in every way that matters.
@@ -92,7 +80,7 @@ const About = () => (
       </Section>
     )}
   />
-);
+)
 
 const Grid = styled.div`
   display: grid;
@@ -103,7 +91,7 @@ const Grid = styled.div`
   justify-items: center;
   margin: 24px 0;
 
-  ${props =>
+  ${(props) =>
     props.inverse &&
     `
     text-align: left;
@@ -114,7 +102,7 @@ const Grid = styled.div`
     margin-bottom: 16px;
   }
 
-  @media (max-width: ${props => props.theme.screen.md}) {
+  @media (max-width: ${(props) => props.theme.screen.md}) {
     grid-template-columns: 1fr;
     text-align: left;
     margin-bottom: 96px;
@@ -123,7 +111,7 @@ const Grid = styled.div`
       margin-bottom: 24px;
     }
 
-    ${props =>
+    ${(props) =>
       props.inverse &&
       `
         ${Art} {
@@ -131,12 +119,12 @@ const Grid = styled.div`
         }
     `}
   }
-`;
+`
 
 const Art = styled.figure`
   margin: 0;
   max-width: 380px;
   width: 100%;
-`;
+`
 
-export default About;
+export default About

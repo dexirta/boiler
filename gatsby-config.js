@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   plugins: [
@@ -33,11 +33,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Absurd`,
-        short_name: `absurd`,
+        name: `Zoltan Papp`,
+        short_name: `ZoltanPappPortfolio`,
         start_url: `/`,
-        background_color: `#8bd8ed`,
-        theme_color: `#8bd8ed`,
+        background_color: `#303061`,
+        theme_color: `#302E63`,
         display: `minimal-ui`,
         icon: `static/favicon.svg`,
       },
@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`average`, `prata\:400,700`],
+        fonts: [`Darker Grotesque\:500,800`],
       },
     },
     {
@@ -62,4 +62,4 @@ module.exports = {
       },
     },
   ],
-};
+}
