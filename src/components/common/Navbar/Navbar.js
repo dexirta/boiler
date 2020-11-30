@@ -51,7 +51,11 @@ class Navbar extends Component {
     }
   }
 
-  getNavAnchorLink = (item) => <AnchorLink href={`#${item.toLowerCase()}`}>{item}</AnchorLink>
+  getNavAnchorLink = (item) => (
+    <AnchorLink href={`#${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
+      {item}
+    </AnchorLink>
+  )
 
   getNavList = ({mobile = false}) => (
     <NavListWrapper mobile={mobile}>
