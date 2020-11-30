@@ -9,7 +9,7 @@ import {Nav, NavItem, Brand, StyledContainer, NavListWrapper, MobileMenu, Mobile
 
 import {ReactComponent as MenuIcon} from '@static/icons/menu.svg'
 
-const NAV_ITEMS = ['Services', 'Brands', 'Portfolio', 'FAQ']
+const NAV_ITEMS = ['Services', 'About', 'Portfolio', 'Contact']
 const LOGO = [
   {
     logo: Logo,

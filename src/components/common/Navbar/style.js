@@ -135,7 +135,7 @@ export const NavListWrapper = styled.div`
 `
 
 export const NavItem = styled.li`
-  margin: 0 0.75em;
+  margin: 0 1em;
   font-family: ${(props) => props.theme.font.secondary};
   ${(props) => props.theme.font_size.small};
 
