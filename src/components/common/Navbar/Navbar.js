@@ -9,7 +9,7 @@ import {Nav, NavItem, Brand, StyledContainer, NavListWrapper, MobileMenu, Mobile
 
 import {ReactComponent as MenuIcon} from '@static/icons/menu.svg'
 
-const NAV_ITEMS = ['About', 'Brands', 'Team', 'FAQ']
+const NAV_ITEMS = ['Services', 'Brands', 'Portfolio', 'FAQ']
 const LOGO = [
   {
     logo: Logo,
@@ -51,11 +51,7 @@ class Navbar extends Component {
     }
   }
 
-  getNavAnchorLink = (item) => (
-    <AnchorLink href={`#${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
-      {item}
-    </AnchorLink>
-  )
+  getNavAnchorLink = (item) => <AnchorLink href={`#${item.toLowerCase()}`}>{item}</AnchorLink>
 
   getNavList = ({mobile = false}) => (
     <NavListWrapper mobile={mobile}>

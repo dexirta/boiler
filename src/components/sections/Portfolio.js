@@ -57,10 +57,10 @@ const FAQS = [
   },
 ]
 
-const Faq = () => (
-  <Section className="block" id="faq">
+const Portfolio = () => (
+  <Section id="portfolio">
     <Container>
-      <h1 style={{marginBottom: 40}}>Frequently Asked Questions</h1>
+      <h1 style={{marginBottom: 40}}>FCase studies</h1>
       <div>
         {FAQS.map(({title, content}) => (
           <FaqItem title={title} key={title}>
@@ -72,4 +72,4 @@ const Faq = () => (
   </Section>
 )
 
-export default Faq
+export default Portfolio

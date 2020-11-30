@@ -42,11 +42,11 @@ export const Nav = styled.nav`
     margin: 0;
     opacity: 0;
   }
-  ul li a:hover a:not(:last-child) {
+  ul li a:hover {
     color: #fff;
     z-index: 1;
   }
-  ul li a:hover:after a:hover:after:not(:last-child) {
+  ul li a:hover:after {
     z-index: -10;
     animation: stroke 0.5s forwards;
     -webkit-animation: stroke 0.5s forwards;
@@ -141,7 +141,7 @@ export const NavItem = styled.li`
 
   a {
     text-decoration: none;
-    color: ${(props) => props.theme.color.white.regular};
+    color: ${(props) => props.theme.color.white.primary};
   }
 
   &.active {
@@ -161,7 +161,7 @@ export const NavItem = styled.li`
     }
 
     a:after {
-      z-index: -10;
+      z-index: 1;
       animation: stroke 0.5s forwards;
       -webkit-animation: stroke 0.5s forwards;
       -moz-animation: stroke 0.5s forwards;
@@ -175,7 +175,7 @@ export const NavItem = styled.li`
       }
 
       a:after {
-        z-index: -10;
+        z-index: 1;
         animation: fill 0.5s forwards;
         -webkit-animation: fill 0.5s forwards;
         -moz-animation: fill 0.5s forwards;

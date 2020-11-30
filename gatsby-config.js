@@ -24,6 +24,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `callout`,
+        path: `${__dirname}/src/images/callout`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `art`,
         path: `${__dirname}/src/images/art`,
       },
@@ -36,7 +43,7 @@ module.exports = {
         name: `Zoltan Papp`,
         short_name: `ZoltanPappPortfolio`,
         start_url: `/`,
-        background_color: `#303061`,
+        background_color: `#fff`,
         theme_color: `#302E63`,
         display: `minimal-ui`,
         icon: `static/favicon.svg`,
