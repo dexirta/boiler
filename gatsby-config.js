@@ -54,6 +54,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Darker Grotesque\:500,800`],
+        display: 'swap',
       },
     },
     {
