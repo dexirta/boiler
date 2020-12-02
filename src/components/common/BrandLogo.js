@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BrandLogo = ({href, children, ...other}) => (
-  <a href={href} {...other} rel="noreferrer noopener">
+  <a href={href} {...other} rel="noreferrer noopener" className="no-underline">
     {children}
   </a>
 )

@@ -100,6 +100,14 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .no-underline {
+      &:hover {
+        &:after {
+          display: none !important;
+        }
+      }
+    }
+
   /* Keyframes */
   @keyframes fill {
     0% {
