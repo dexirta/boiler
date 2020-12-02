@@ -87,10 +87,10 @@ const Services = () => (
                 <div>
                   <h2>Design</h2>
                   <p>
-                    Full IoT radio connectivity design from hardware to firmware with
-                    <span>
-                      <ExternalLink className={`link`}> my fellow freelancer peers.</ExternalLink>
-                    </span>
+                    Full IoT radio connectivity design from hardware to firmware with{' '}
+                    <ExternalLink className={`link`} href="https://www.linkedin.com" title="LinkedIn">
+                      my fellow freelancer peers.
+                    </ExternalLink>
                   </p>
                 </div>
                 <div>
