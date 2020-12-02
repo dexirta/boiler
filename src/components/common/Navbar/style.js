@@ -16,44 +16,6 @@ export const Nav = styled.nav`
     line-height: 37px;
   }
 
-  ul li a:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 0%;
-    content: '.';
-    color: transparent;
-    background: ${(props) => props.theme.color.secondary};
-    height: 1px;
-  }
-  ul li a:hover:after {
-    width: 100%;
-  }
-
-  ul li a {
-    transition: all 1s;
-  }
-
-  ul li a:after {
-    text-align: left;
-    content: '.';
-    margin: 0;
-    opacity: 0;
-  }
-  ul li a:hover {
-    color: #fff;
-    z-index: 1;
-  }
-  ul li a:hover:after {
-    z-index: -10;
-    animation: stroke 0.5s forwards;
-    -webkit-animation: stroke 0.5s forwards;
-    -moz-animation: stroke 0.5s forwards;
-    opacity: 1;
-  }
-
   ul li:last-child {
     a {
       border: 2px solid ${(props) => props.theme.color.secondary};
@@ -71,37 +33,6 @@ export const Nav = styled.nav`
 
     a:hover {
       color: #fff;
-    }
-  }
-
-  /* Keyframes */
-  @keyframes fill {
-    0% {
-      width: 0%;
-      height: 1px;
-    }
-    50% {
-      width: 100%;
-      height: 1px;
-    }
-    100% {
-      width: 100%;
-      height: 100%;
-      background: ${(props) => props.theme.color.secondary};
-    }
-  }
-
-  @keyframes stroke {
-    0% {
-      width: 0%;
-      height: 1px;
-    }
-    70% {
-      width: 100%;
-      height: 1px;
-    }
-    100% {
-      background: ${(props) => props.theme.color.secondary};
     }
   }
 `
@@ -136,7 +67,7 @@ export const NavListWrapper = styled.div`
 
 export const NavItem = styled.li`
   margin: 0 1em;
-  font-family: ${(props) => props.theme.font.secondary};
+  font-family: ${(props) => props.theme.font.primary};
   ${(props) => props.theme.font_size.small};
 
   a {
@@ -157,15 +88,11 @@ export const NavItem = styled.li`
         margin: auto;
         background: ${(props) => props.theme.color.secondary};
         z-index: 1;
+        animation: stroke 0.5s forwards;
+        -webkit-animation: stroke 0.5s forwards;
+        -moz-animation: stroke 0.5s forwards;
+        opacity: 1;
       }
-    }
-
-    a:after {
-      z-index: 1;
-      animation: stroke 0.5s forwards;
-      -webkit-animation: stroke 0.5s forwards;
-      -moz-animation: stroke 0.5s forwards;
-      opacity: 1;
     }
 
     &:last-child {
@@ -175,7 +102,7 @@ export const NavItem = styled.li`
       }
 
       a:after {
-        z-index: 1;
+        z-index: -1;
         animation: fill 0.5s forwards;
         -webkit-animation: fill 0.5s forwards;
         -moz-animation: fill 0.5s forwards;

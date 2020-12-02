@@ -1,57 +1,79 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import {Section, Container} from '@components/global'
 
-import FaqItem from '@common/FaqItem'
-import ExternalLink from '@common/ExternalLink'
+import AccordionItem from '@common/AccordionItem'
 
 const FAQS = [
   {
-    title: 'What tech does Gatsby use?',
+    title: 'Data collection systems',
     content: () => (
       <>
-        Enjoy the power of the latest web technologies – React.js , Webpack , modern JavaScript and CSS and more — all
-        set up and waiting for you to start building
+        I have done this multiple times in my career. DUTs were always RF transceiver ICs. The data collection setup was
+        a set of rack based (mostly RF) instruments augmented with a temperature forcing device. The DUTs were hooked up
+        to the various measurement devices via switch matrices (RF, Baseband and DC) so all the required (Tx, Rx, DC,
+        miscellaneous) measurements could be done without reconfiguring the setup. Automation was done either with
+        AgilentVEE or NI Labview or Matlab. The data collection stations were used for characterisation and debug
+        purposes. <br /> <br />
+        <i>Skills: Automated measurements, LabView, Agilent Vee, Matlab</i>
+        <br />
       </>
     ),
   },
   {
-    title: 'Where can you source data from?',
+    title: 'Antenna diversity algorithm',
     content: () => (
       <>
-        Gatsby’s rich data plugin ecosystem lets you build sites with the data you want — from one or many sources: Pull
-        data from headless CMSs, SaaS services, APIs, databases, your file system, and more directly into your pages
-        using GraphQL.
+        Rx side spatial antenna diversity performance comes down to two most important factors: how much improvement it
+        brings to link budget in a fading prone environment and what is the shortest training sequence (hence lowest
+        power consumption penalty) it can robustly run on. I led the activity of fine tuning algorithm parameters with
+        the help of conducted and radiated test setups built for the purpose to meet certain performance criteria in
+        both metrics on multiple product lines.
+        <br /> <br />
+        <i>Skills: Automated measurements, Agilent Vee, Signal processing</i>
       </>
     ),
   },
   {
-    title: 'How do I scale Gatsby sites?',
+    title: 'Fast signal detection algorithm',
     content: () => (
       <>
-        Gatsby.js is Internet Scale. Forget complicated deploys with databases and servers and their expensive,
-        time-consuming setup costs, maintenance, and scaling fears. Gatsby.js builds your site as “static” files which
-        can be deployed easily on dozens of services.
+        One of the TRX IC products I worked on offered a rather novel fast signal detection capability that had
+        attractive benefits: faster Rx channel scan turnaround times, lower Rx current consumption via duty cycling the
+        device between Rx and idle states. I supervised performance validation and enhancements on the algorithm to
+        maintain performance (sensitivity and robustness mainly) or control the performance loss (frequency offset
+        tolerance and sensitivity mostly) over a range of preamble lengths.
+        <br /> <br />
+        <i>Skills: Automated measurements, Agilent Vee, Signal processing</i>
       </>
     ),
   },
   {
-    title: 'How does do I future-proof my website?',
+    title: 'Intermittent Rx malfunction',
     content: () => (
       <>
-        Do not build a website with last decade’s tech. The future of the web is mobile, JavaScript and APIs—the{` `}
-        <ExternalLink href="https://jamstack.org/">JAMstack</ExternalLink>. Every website is a web app and every web app
-        is a website. Gatsby.js is the universal JavaScript framework you’ve been waiting for.
+        One of the PXI based RF generator test setup I was working on started producing intermittent Rx packet losses we
+        could not quite explain with the DUT behavior. After instrumenting up the generator the dropped packets clearly
+        correlated to a mid-packet frequency pull on the test signal. These, as turned out soon, were induced by the
+        on/off switching of a high power equipment at the company next door. A UPS between the mains and the generator
+        fixed the issue.
+        <br /> <br />
+        <i>Skills: Automated measurements, Agilent Vee, PXI instrumentation</i>
       </>
     ),
   },
   {
-    title: 'What exactly does Gatsby build?',
+    title: 'Best Rx performance',
     content: () => (
       <>
-        Gatsby.js is a static PWA (Progressive Web App) generator. You get code and data splitting out-of-the-box.
-        Gatsby loads only the critical HTML, CSS, data, and JavaScript so your site loads as fast as possible. Once
-        loaded, Gatsby prefetches resources for other pages so clicking around the site feels incredibly fast.
+        In this rather demanding project the Rx performance had to be optimized simultaneously meeting stringent
+        requirements on sensitivity, frequency offset tolerance, data rate offset tolerance, selectivity, blocking and
+        resilience in packet collision events. Since optimizing for one may hit another this project was all about
+        iteratively turning the knobs and taking a big set of measurement data making sure no adverse effects were
+        caused.
+        <br /> <br />
+        <i>Skills: Automated measurements, Agilent Vee, Radio architectures</i>
       </>
     ),
   },
@@ -60,16 +82,27 @@ const FAQS = [
 const Portfolio = () => (
   <Section id="portfolio">
     <Container>
-      <h1 style={{marginBottom: 40}}>FCase studies</h1>
+      <SectionHeading>Case studies </SectionHeading>
       <div>
         {FAQS.map(({title, content}) => (
-          <FaqItem title={title} key={title}>
+          <AccordionItem title={title} key={title}>
             {content()}
-          </FaqItem>
+          </AccordionItem>
         ))}
       </div>
     </Container>
   </Section>
 )
+
+const SectionHeading = styled.h1`
+  margin-top: 100px;
+
+  color: ${(props) => props.theme.color.primary};
+  ${(props) => props.theme.font_size.xlarge};
+
+  @media (max-width: ${(props) => props.theme.screen.md}) {
+    margin-top: 80px;
+  }
+`
 
 export default Portfolio

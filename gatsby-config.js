@@ -14,25 +14,26 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `team`,
-        path: `${__dirname}/src/images/team`,
-      },
-    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `callout`,
-        path: `${__dirname}/src/images/callout`,
+        path: `${__dirname}/static/callout`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `art`,
-        path: `${__dirname}/src/images/art`,
+        name: `profile`,
+        path: `${__dirname}/static/profile`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `bg`,
+        path: `${__dirname}/static/bg`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -61,7 +62,6 @@ module.exports = {
         alias: {
           '@components': path.resolve(__dirname, 'src/components'),
           '@common': path.resolve(__dirname, 'src/components/common'),
-          '@images': path.resolve(__dirname, 'src/images'),
           '@sections': path.resolve(__dirname, 'src/components/sections'),
           '@styles': path.resolve(__dirname, 'src/styles/'),
           '@static': path.resolve(__dirname, 'static/'),

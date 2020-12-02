@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import {StaticQuery, graphql} from 'gatsby'
 import Img from 'gatsby-image'
+import Header from '@sections/Header'
 
 import {Section, Container} from '@components/global'
+import BackgroundImage from 'gatsby-background-image'
 
-const BG = {
-  url: 'bg-waves.png',
-}
+import ExternalLink from '@common/ExternalLink'
 
 const CALLOUT = [
   {
@@ -48,96 +48,94 @@ const Services = () => (
             }
           }
         }
+        bg_header: file(sourceInstanceName: {eq: "bg"}, name: {eq: "bg_header"}) {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     `}
     render={(data) => (
-      <Section id="services">
-        <BackgroundWhithImage>
+      <div>
+        <BackgroundImage Tag="section" fluid={data.bg_header.childImageSharp.fluid} backgroundColor={`#302E63`}>
           <Container>
-            <HeaderContainer>
-              <div>Freelance electronics engineer with 15+years specializing in short-range radio connections.</div>
-            </HeaderContainer>
-            <SectionHeading>Services</SectionHeading>
-            <GridThree>
-              <div>
-                <h4>Consultancy</h4>
-                <p>Radio link system level design and regulatory aspects for future or existing IoT products.</p>
-              </div>
-              <div>
-                <h4>Regulatory compliance</h4>
-                <p>Validating your product against the relevant RF/EMC regulatory standards.</p>
-              </div>
-              <div>
-                <h4>Measurement & validation</h4>
-                <p>Assisting clients with interpreting, implementing and automating RF measurement procedures.</p>
-              </div>
-              <div>
-                <h4>Debugging</h4>
-                <p>Helping you finding the root cause of performance issues or failing RF/EMC regulatory testing.</p>
-              </div>
-              <div>
-                <h4>Design</h4>
-                <p>Full IoT radio connectivity design from hardware to firmware with my fellow freelancer peers.</p>
-              </div>
-              <div>
-                <h4>Documentation</h4>
-                <p>Consise and tidy writing of measurement reports, technical reports or application notes.</p>
-              </div>
-            </GridThree>
+            <Header />
           </Container>
-        </BackgroundWhithImage>
-        <Background>
-          <Container>
-            <GridFour>
-              {CALLOUT.map(({alt, image, text}) => {
-                const img = data.allFile.edges.find(({node}) => node.relativePath === image).node
-                return (
-                  <div key={alt}>
-                    <CalloutImgWrapper>
-                      <Img fluid={img.childImageSharp.fluid} alt={alt} />
-                    </CalloutImgWrapper>
-                    <p>{text}</p>
-                  </div>
-                )
-              })}
-            </GridFour>
-          </Container>
-        </Background>
-      </Section>
+
+          <Section id="services">
+            <Container>
+              <SectionHeading>Services</SectionHeading>
+              <GridThree>
+                <div>
+                  <h2>Consultancy</h2>
+                  <p>Radio link system level design and regulatory aspects for future or existing IoT products.</p>
+                </div>
+                <div>
+                  <h2>Regulatory compliance</h2>
+                  <p>Validating your product against the relevant RF/EMC regulatory standards.</p>
+                </div>
+                <div>
+                  <h2>Measurement & validation</h2>
+                  <p>Assisting clients with interpreting, implementing and automating RF measurement procedures.</p>
+                </div>
+                <div>
+                  <h2>Debugging</h2>
+                  <p>Helping you finding the root cause of performance issues or failing RF/EMC regulatory testing.</p>
+                </div>
+                <div>
+                  <h2>Design</h2>
+                  <p>
+                    Full IoT radio connectivity design from hardware to firmware with
+                    <span>
+                      <ExternalLink className={`link`}> my fellow freelancer peers.</ExternalLink>
+                    </span>
+                  </p>
+                </div>
+                <div>
+                  <h2>Documentation</h2>
+                  <p>Consise and tidy writing of measurement reports, technical reports or application notes.</p>
+                </div>
+              </GridThree>
+            </Container>
+            <Background>
+              <Container>
+                <GridFour>
+                  {CALLOUT.map(({alt, image, text}) => {
+                    const img = data.allFile.edges.find(({node}) => node.relativePath === image).node
+                    return (
+                      <div key={alt}>
+                        <CalloutImgWrapper>
+                          <Img fluid={img.childImageSharp.fluid} alt={alt} />
+                        </CalloutImgWrapper>
+                        <p>{text}</p>
+                      </div>
+                    )
+                  })}
+                </GridFour>
+              </Container>
+            </Background>
+          </Section>
+        </BackgroundImage>
+      </div>
     )}
   />
 )
-
-const BackgroundWhithImage = styled.div`
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-color: ${(props) => props.theme.color.primary};
-  background-image: url(${BG.url});
-`
 
 const Background = styled.div`
   background: #282440;
 `
 
-const HeaderContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr minmax(auto, 60%);
-  ${(props) => props.theme.font_size.large};
-  line-height: 48px;
-  padding-top: 120px;
-  color: ${(props) => props.theme.color.white.primary};
-
-  @media (max-width: ${(props) => props.theme.screen.md}) {
-    grid-template-columns: 1fr;
-  }
-`
 const SectionHeading = styled.h1`
-  padding-top: 80px;
+  margin-top: 100px;
 
   color: ${(props) => props.theme.color.white.primary};
   ${(props) => props.theme.font_size.xlarge};
+
+  @media (max-width: ${(props) => props.theme.screen.md}) {
+    margin-top: 80px;
+  }
 `
 
 const GridThree = styled.div`
@@ -146,10 +144,10 @@ const GridThree = styled.div`
   grid-gap: 40px;
   align-items: top;
   justify-items: start;
-  padding: 24px 0 140px;
+  padding: 40px 0 140px;
 
-  h4 {
-    margin-bottom: 16px;
+  h2 {
+    margin: 2rem 0;
     ${(props) => props.theme.font_size.regular};
     color: ${(props) => props.theme.color.secondary};
   }
@@ -160,27 +158,31 @@ const GridThree = styled.div`
     color: ${(props) => props.theme.color.white.primary};
   }
 
+  .link {
+    transition: none;
+    &:hover {
+      border-bottom: 2px solid ${(props) => props.theme.color.secondary};
+    }
+    &:after {
+      display: none;
+    }
+  }
+
   @media (max-width: ${(props) => props.theme.screen.lg}) {
-    h4 {
+    h2 {
       height: 62px;
     }
   }
 
   @media (max-width: ${(props) => props.theme.screen.md}) {
+    padding-bottom: 60px;
     grid-template-columns: 1fr;
     text-align: left;
 
-    h4 {
+    h2 {
       height: auto;
+      margin: 0 0 1rem;
     }
-
-    ${(props) =>
-      props.inverse &&
-      `
-        ${Art} {
-          order: 2;
-        }
-    `}
   }
 `
 
@@ -199,13 +201,36 @@ const GridFour = styled.div`
   }
 
   @media (max-width: ${(props) => props.theme.screen.md}) {
+    padding-top: 60px;
+    padding-bottom: 60px;
     grid-template-columns: 2fr 2fr;
+
+    p {
+      ${(props) => props.theme.font_size.large};
+      line-height: 48px;
+    }
+
+    figure {
+      max-width: 80px;
+    }
+  }
+
+  @media (max-width: ${(props) => props.theme.screen.sm}) {
+    grid-template-columns: 2fr 2fr;
+
+    figure {
+      max-width: 80px;
+    }
   }
 `
 const CalloutImgWrapper = styled.figure`
   max-width: 140px;
   width: 100%;
   margin: 20px 0 30px;
+
+  @media (max-width: ${(props) => props.theme.screen.sm}) {
+    max-width: 80px;
+  }
 `
 
 export default Services

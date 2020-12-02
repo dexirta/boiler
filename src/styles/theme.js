@@ -1,7 +1,6 @@
 const theme = {
   font: {
     primary: `'Darker Grotesque', serif`,
-    secondary: `'Darker Grotesque', serif`,
   },
   font_size: {
     small: 'font-size: 20px; line-height: 30px',

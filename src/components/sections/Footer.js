@@ -1,119 +1,123 @@
-import React from 'react';
-import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from 'react'
+import styled from 'styled-components'
+import {StaticQuery, graphql} from 'gatsby'
 
-import { Container } from '@components/global';
-import ExternalLink from '@common/ExternalLink';
+import BackgroundImage from 'gatsby-background-image'
 
-import GithubIcon from '@static/icons/github.svg';
-import InstagramIcon from '@static/icons/instagram.svg';
-import TwitterIcon from '@static/icons/twitter.svg';
+import {Section, Container} from '@components/global'
+import ExternalLink from '@common/ExternalLink'
 
-const SOCIAL = [
+const BG = {
+  content_decor: 'content-decor.svg',
+}
+
+const LINKS = [
   {
-    icon: GithubIcon,
-    link: 'https://github.com/ajayns/gatsby-absurd',
+    name: 'zoltan@zoltpapp.com',
+    link: 'mailto:zoltan@zoltpapp.com',
+    title: 'Drop me an email',
   },
   {
-    icon: InstagramIcon,
-    link: 'https://instagram.com/ajay_ns',
+    name: 'LinkedIn',
+    link: 'https://www.linkedin.com',
+    title: 'Check out my LinkedIn profile',
   },
-  {
-    icon: TwitterIcon,
-    link: 'https://twitter.com/ajayns08',
-  },
-];
+]
+
+const getActualYear = new Date().getFullYear()
 
 const Footer = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_pot: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "customers_pot" }
-        ) {
+        bg_footer: file(sourceInstanceName: {eq: "bg"}, name: {eq: "bg_footer"}) {
           childImageSharp {
-            fluid(maxWidth: 960) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
       }
     `}
-    render={data => (
-      <React.Fragment>
-        <Art>
-          <Img
-            fluid={data.art_pot.childImageSharp.fluid}
-            style={{ width: 480, maxWidth: '100%', marginBottom: -16 }}
-          />
-        </Art>
-        <FooterWrapper>
-          <StyledContainer>
-            <Copyright>
-
-            </Copyright>
-            <SocialIcons>
-              {SOCIAL.map(({ icon, link }) => (
-                <ExternalLink key={link} href={link}>
-                  <img src={icon} alt="link" />
-                </ExternalLink>
-              ))}
-            </SocialIcons>
-          </StyledContainer>
-        </FooterWrapper>
-      </React.Fragment>
+    render={(data) => (
+      <Section id="contact">
+        <BackgroundImage Tag="section" fluid={data.bg_footer.childImageSharp.fluid} backgroundColor={`#302E63`}>
+          <Container>
+            <Grid>
+              <div>
+                <TextWithDecoration>
+                  <h1>
+                    Let’s start <span>thinking</span> together.
+                  </h1>
+                </TextWithDecoration>
+                <ContactWrapper>
+                  {LINKS.map(({name, link, title}) => (
+                    <div key={name}>
+                      <ExternalLink href={link} title={title}>
+                        {name}
+                      </ExternalLink>
+                    </div>
+                  ))}
+                </ContactWrapper>
+                <Copyright>{getActualYear} Zoltan Papp. All rights reserved</Copyright>
+              </div>
+            </Grid>
+          </Container>
+        </BackgroundImage>
+      </Section>
     )}
   />
-);
+)
 
-const SocialIcons = styled.div`
-  display: flex;
+const Grid = styled.footer`
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 20%);
+  grid-gap: 40px;
+  align-items: top;
+  justify-items: start;
+  padding: 40px 0 80px;
 
-  img {
-    margin: 0 8px;
-    width: 24px;
-    height: 24px;
+  @media (max-width: ${(props) => props.theme.screen.md}) {
+    padding-bottom: 60px;
   }
 
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    margin-top: 40px;
+  @media (max-width: ${(props) => props.theme.screen.sm}) {
+    grid-template-columns: 1fr;
   }
-`;
+`
 
-const FooterWrapper = styled.footer`
-  background-color: ${props => props.theme.color.primary};
-  padding: 32px 0;
-`;
+const ContactWrapper = styled.div`
+  margin: 40px 0;
+  ${(props) => props.theme.font_size.large};
+  font-weight: 800;
+
+  div {
+    display: block;
+    padding: 20px 0;
+  }
+`
+
+const TextWithDecoration = styled.div`
+  margin: 60px 0 80px;
+  color: ${(props) => props.theme.color.white.primary};
+  span {
+    margin: 0 -10px;
+    padding: 1rem 10px 0;
+    background-position: 0 150%;
+    background-image: url(${BG.content_decor});
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: ${(props) => props.theme.screen.md}) {
+    margin: 40px 0 60px;
+  }
+`
 
 const Copyright = styled.div`
-  font-family: ${props => props.theme.font.secondary};
-  ${props => props.theme.font_size.small};
-  color: ${props => props.theme.color.black.regular};
+  margin-top: 80px;
+  ${(props) => props.theme.font_size.small};
+  color: ${(props) => props.theme.color.white.primary};
+`
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-`;
-
-const Art = styled.figure`
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  margin-top: 48px;
-`;
-
-const StyledContainer = styled(Container)`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    flex-direction: column;
-    text-align: center;
-  }
-`;
-
-export default Footer;
+export default Footer

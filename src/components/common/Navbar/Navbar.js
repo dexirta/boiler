@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Scrollspy from 'react-scrollspy'
-import {ReactComponent as Logo} from '@images/logo.svg'
+import {ReactComponent as Logo} from '@static/logo.svg'
 import BrandLogo from '@common/BrandLogo'
 
 import {Container} from '@components/global'
@@ -21,6 +21,7 @@ const LOGO = [
 class Navbar extends Component {
   state = {
     mobileMenuOpen: false,
+    isScrolled: false,
   }
 
   componentDidMount() {
@@ -28,16 +29,27 @@ class Navbar extends Component {
   }
 
   hashHandler() {
-    const headings = document.querySelectorAll('section[id]')
+    const sections = document.querySelectorAll('section[id]')
+    let counter = null
 
-    document.addEventListener('scroll', () => {
-      headings.forEach((ha) => {
-        const rect = ha.getBoundingClientRect()
-        if (rect.top >= 0 && rect.top <= 150) {
+    const arrayLoop = () => {
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect()
+        if (rect.top >= 0 && rect.top <= 250) {
           const location = window.location.toString().split('#')[0]
-          history.replaceState(null, null, location + '#' + ha.id)
+          history.replaceState(null, null, location + '#' + section.id)
+          counter++
         }
       })
+    }
+
+    document.addEventListener('scroll', () => {
+      setTimeout(() => {
+        arrayLoop()
+        if (counter === 1) {
+          this.setState(() => ({isScrolled: true}))
+        }
+      }, 100)
     })
   }
 
@@ -61,9 +73,8 @@ class Navbar extends Component {
     <NavListWrapper mobile={mobile}>
       <Scrollspy
         items={NAV_ITEMS.map((item) => item.toLowerCase())}
-        currentClassName="active"
-        mobile={mobile}
-        offset={-64}>
+        currentClassName={this.state.isScrolled ? 'active' : ''}
+        offset={-150}>
         {NAV_ITEMS.map((navItem) => (
           <NavItem key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
         ))}

@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
   ${normalize};
 
   body {
-    font-family: ${(props) => props.theme.font.secondary};
+    font-family: ${(props) => props.theme.font.primary};
   }
 
   h1, h2, h3, p {
@@ -65,7 +65,77 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
+    position: relative;
+    text-decoration: none;
+    color: ${(props) => props.theme.color.white.primary};
+    text-decoration: none;
+    transition: all 1s;
     cursor: pointer;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      color: transparent;
+      background: ${(props) => props.theme.color.secondary};
+    }
+    &:hover {
+      color: #fff;
+      z-index: 1;
+      &:after {
+        content: '';
+        width: auto;
+        text-align: left;
+        margin: 0;
+        z-index: -10;
+        animation: stroke 0.5s forwards;
+        -webkit-animation: stroke 0.5s forwards;
+        -moz-animation: stroke 0.5s forwards;
+        opacity: 1;
+      }
+    }
+  }
+
+  /* Keyframes */
+  @keyframes fill {
+    0% {
+      width: 0%;
+      height: 1px;
+    }
+    50% {
+      width: 100%;
+      height: 1px;
+    }
+    100% {
+      width: 100%;
+      height: 100%;
+      background: ${(props) => props.theme.color.secondary};
+    }
+  }
+
+  @keyframes stroke {
+    0% {
+      width: 0%;
+      height: 1px;
+    }
+    70% {
+      width: 100%;
+      height: 1px;
+    }
+    100% {
+      background: ${(props) => props.theme.color.secondary};
+    }
+  }
+
+
+  @media (max-width: ${(props) => props.theme.screen.md}) {
+    h1 {font-size: 60px !important; line-height: 4rem !important}
+    h2 {font-size: 34px !important; line-height: 2rem!important}
+    p {font-size: 20px !important; line-height: 1.6rem !important}
   }
 `
 
