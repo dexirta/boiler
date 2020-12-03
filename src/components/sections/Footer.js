@@ -19,7 +19,7 @@ const LINKS = [
   },
   {
     name: 'LinkedIn',
-    link: 'https://www.linkedin.com',
+    link: 'https://www.linkedin.com/in/zoltan-papp-404064124',
     title: 'Check out my LinkedIn profile',
   },
 ]
