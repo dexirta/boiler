@@ -9,45 +9,43 @@ import BackgroundImage from 'gatsby-background-image'
 
 import ExternalLink from '@common/ExternalLink'
 
+import {ReactComponent as Icon1} from '@static/callout/icon1.svg'
+import {ReactComponent as Icon2} from '@static/callout/icon2.svg'
+import {ReactComponent as Icon3} from '@static/callout/icon3.svg'
+import {ReactComponent as Icon4} from '@static/callout/icon4.svg'
+
 const CALLOUT = [
   {
     alt: 'Icon 1',
-    image: 'callout-img-1.png',
+    image: Icon1,
     text: 'For startups to large enterprises',
   },
   {
     alt: 'Icon 2',
-    image: 'callout-img-1.png',
+    image: Icon2,
     text: 'For existing or future products',
   },
   {
     alt: 'Icon 3',
-    image: 'callout-img-2.png',
+    image: Icon3,
     text: 'For remote or on-site work',
   },
   {
     alt: 'Icon 4',
-    image: 'callout-img-3.png',
+    image: Icon4,
     text: 'For failing or passing products',
   },
 ]
+
+const LINKS = {
+  urs: 'https://www.rfsparkling.com',
+  title: 'Fellow freelancer peers',
+}
 
 const Services = () => (
   <StaticQuery
     query={graphql`
       query {
-        allFile(filter: {sourceInstanceName: {eq: "callout"}}) {
-          edges {
-            node {
-              relativePath
-              childImageSharp {
-                fluid(maxWidth: 140) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
-            }
-          }
-        }
         bg_header: file(sourceInstanceName: {eq: "bg"}, name: {eq: "bg_header"}) {
           childImageSharp {
             fluid(quality: 100) {
@@ -87,9 +85,9 @@ const Services = () => (
                 <div>
                   <h2>Design</h2>
                   <p>
-                    Full IoT radio connectivity design from hardware to firmware with{' '}
-                    <ExternalLink className={`link`} href="https://www.linkedin.com" title="LinkedIn">
-                      my fellow freelancer peers.
+                    Full IoT radio connectivity design from hardware to firmware with my{' '}
+                    <ExternalLink className={`link`} href={LINKS.url} title={LINKS.title}>
+                      fellow freelancer peers.
                     </ExternalLink>
                   </p>
                 </div>
@@ -103,12 +101,9 @@ const Services = () => (
               <Container>
                 <GridFour>
                   {CALLOUT.map(({alt, image, text}) => {
-                    const img = data.allFile.edges.find(({node}) => node.relativePath === image).node
                     return (
                       <div key={alt}>
-                        <CalloutImgWrapper>
-                          <Img fluid={img.childImageSharp.fluid} alt={alt} />
-                        </CalloutImgWrapper>
+                        <CalloutImgWrapper key={alt}>{image()}</CalloutImgWrapper>
                         <p>{text}</p>
                       </div>
                     )
@@ -160,6 +155,7 @@ const GridThree = styled.div`
 
   .link {
     transition: none;
+    border-bottom: 2px solid ${(props) => props.theme.color.white.primary};
     &:hover {
       border-bottom: 2px solid ${(props) => props.theme.color.secondary};
     }

@@ -38,7 +38,7 @@ const EXPERIENCE = [
 const LINKS = [
   {
     name: 'More details',
-    link: 'https://google.com',
+    link: 'https://www.linkedin.com/in/zoltan-papp-404064124',
     title: 'Check out my LinkedIn profile',
   },
 ]
@@ -57,7 +57,7 @@ const About = () => (
       }
     `}
     render={(data) => (
-      <Section id="about">
+      <Section id="about" className="bg-white">
         <Container>
           <SectionHeading>About</SectionHeading>
           <GridTwo>
@@ -197,6 +197,7 @@ const GridTwo = styled.div`
 
 const SectionHeading = styled.h1`
   margin-top: 100px;
+  margin-bottom: 2rem;
 
   color: ${(props) => props.theme.color.primary};
   ${(props) => props.theme.font_size.xlarge};

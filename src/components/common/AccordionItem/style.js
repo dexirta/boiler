@@ -26,8 +26,8 @@ export const Wrapper = styled.div`
     cursor: pointer;
     color: ${(props) => props.theme.color.primary};
     font-family: ${(props) => props.theme.font.primary};
-    ${(props) => props.theme.font_size.regular};
-    padding: 24px 0;
+    ${(props) => props.theme.font_size.large};
+    padding: 24px 1rem;
     padding-right: 72px;
     position: relative;
 
@@ -38,11 +38,10 @@ export const Wrapper = styled.div`
     &::after {
       content: '+';
       display: block;
-      width: 40px;
-      height: 0px;
       position: absolute;
-      top: 26px;
-      right: 0px;
+      top: 1rem;
+      right: 1rem;
+      font-weight: 5;
       font-weight: 500;
       ${(props) => props.theme.font_size.large};
       transition: transform 0.3s ease-in-out;
@@ -56,7 +55,7 @@ export const Wrapper = styled.div`
   }
 
   .accordion-content {
-    padding: 0 72px 32px 0;
+    padding: 0 72px 32px 1rem;
     line-height: 26px;
     ${(props) => props.theme.font_size.small};
     color: ${(props) => props.theme.color.primary};
