@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 const SEO_DATA = {
-  description: 'Zoltan Papp portfolio',
+  description: 'Senior application engineer',
   title: 'Zoltan Papp',
   url: '',
   author: 'Zoltan Papp',
