@@ -59,7 +59,7 @@ const Footer = () => (
                     </div>
                   ))}
                 </ContactWrapper>
-                <Copyright>{getActualYear} Zoltan Papp. All rights reserved</Copyright>
+                <Copyright>{getActualYear} Zoltan Papp. All rights reserved.</Copyright>
               </div>
             </Grid>
           </Container>
