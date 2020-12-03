@@ -196,22 +196,6 @@ const REGULATORY = [
     ),
   },
   {
-    title: 'Poor throughput',
-    content: () => (
-      <>
-        This project had an interesting angle where the issue reported by the customer simply could not be reproduced at
-        our premises. The issue itself was significantly lower throughput than on the customer’s legacy product. A visit
-        onsite revealed that the radio environment was hugely different to ours which manifested itself in a 10 MHz wide
-        rather high power (tower was closeby) LTE channel right above the application operating frequency. From this
-        point on the task became balancing dynamic range, linearity, selectivity and sensitivity of the Rx by various
-        configuration changes that in the end produced results on par with the legacy device.
-        <br /> <br />
-        <i>Skills: Radio architectures, Signal processing</i>
-        <br />
-      </>
-    ),
-  },
-  {
     title: 'FCC part 15.247 compliance',
     content: () => (
       <>
