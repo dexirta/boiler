@@ -96,7 +96,10 @@ class Navbar extends Component {
             ))}
           </Brand>
           <Mobile>
-            <button onClick={this.toggleMobileMenu} style={{color: 'white'}} aria-label="Open the menu">
+            <button
+              onClick={this.toggleMobileMenu}
+              style={{color: 'white', touchAction: 'manipulation'}}
+              aria-label="Open the menu">
               <MenuIcon aria-hidden={true} />
             </button>
           </Mobile>
