@@ -40,8 +40,6 @@ const SEO_DATA = {
 const SEO = () => {
   return (
     <Helmet>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-
       <meta property="fb:app_id" content={SEO_DATA.facebookId} />
       <meta property="og:title" content={SEO_DATA.title} />
       <meta property="og:type" content="website" />
