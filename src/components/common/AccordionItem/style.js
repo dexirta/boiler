@@ -39,12 +39,13 @@ export const Wrapper = styled.div`
       content: '+';
       display: block;
       position: absolute;
-      top: 1rem;
+      top: 50%;
       right: 1rem;
       font-weight: 5;
       font-weight: 500;
       ${(props) => props.theme.font_size.large};
       transition: transform 0.3s ease-in-out;
+      transform: translate(0, -50%);
     }
 
     &.active {

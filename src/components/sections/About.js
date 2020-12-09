@@ -117,6 +117,7 @@ const GridTwo = styled.div`
   padding: 40px 0 0;
 
   .align-self-end {
+    padding-bottom: 0.5rem;
     align-self: end;
 
     div:nth-last-child(2) {
@@ -159,6 +160,18 @@ const GridTwo = styled.div`
     margin-bottom: 5rem;
   }
 
+  .link {
+    color: ${(props) => props.theme.color.primary};
+
+    ${(props) => props.theme.font_size.regular};
+    &:after {
+      content: '';
+      background: ${(props) => props.theme.color.secondary};
+    }
+    &:hover {
+    }
+  }
+
   @media (max-width: ${(props) => props.theme.screen.lg}) {
     h2 {
       height: 62px;
@@ -177,20 +190,6 @@ const GridTwo = styled.div`
     h2 {
       height: auto;
       margin: 0 0 1rem;
-    }
-  }
-
-  .link {
-    color: ${(props) => props.theme.color.primary};
-
-    ${(props) => props.theme.font_size.regular};
-    &:after {
-      content: '';
-
-      background: ${(props) => props.theme.color.secondary};
-    }
-    &:hover {
-      z-index: 1;
     }
   }
 `

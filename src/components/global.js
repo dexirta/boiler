@@ -19,6 +19,10 @@ export const Container = styled.div`
   }
 
   @media (min-width: ${(props) => props.theme.screen.lg}) {
+    max-width: 1250px;
+  }
+
+  @media (min-width: ${(props) => props.theme.screen.xl}) {
     max-width: 1300px;
   }
 

@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
-import {Container} from '@components/global'
-
 class Header extends Component {
   render() {
     return (
