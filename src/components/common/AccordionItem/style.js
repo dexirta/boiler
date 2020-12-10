@@ -58,7 +58,7 @@ export const Wrapper = styled.div`
   .accordion-content {
     padding: 0 72px 32px 1rem;
     line-height: 26px;
-    ${(props) => props.theme.font_size.small};
+    ${(props) => props.theme.font_size.regular};
     color: ${(props) => props.theme.color.primary};
   }
 `

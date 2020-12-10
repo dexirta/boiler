@@ -60,7 +60,7 @@ const TabWrapper = styled.div`
     margin: 1rem 0.5rem;
     padding: 1rem 0.5rem;
     ${(props) => props.theme.font_size.regular};
-    border-bottom: 4px solid ${(props) => props.theme.color.primary};
+    border-bottom: 4px solid #aaa9cd;
     list-style: none;
     &:first-child {
       margin-left: 0;

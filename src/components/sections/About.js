@@ -37,7 +37,7 @@ const EXPERIENCE = [
 
 const LINKS = [
   {
-    name: 'More details',
+    name: 'Read full CV',
     link: 'https://www.linkedin.com/in/zoltan-papp-404064124',
     title: 'Check out my LinkedIn profile',
   },
