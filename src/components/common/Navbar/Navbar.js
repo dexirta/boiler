@@ -7,7 +7,7 @@ import BrandLogo from '@common/BrandLogo'
 import {Container} from '@components/global'
 import {Nav, NavItem, Brand, StyledContainer, NavListWrapper, MobileMenu, Mobile} from './style'
 
-import {ReactComponent as MenuIcon} from '@static/icons/menu.svg'
+import MenuIcon from '@common/Navbar/MenuIcon'
 
 const NAV_ITEMS = ['Services', 'About', 'Projects', 'Contact']
 const LOGO = [
@@ -100,7 +100,7 @@ class Navbar extends Component {
               onClick={this.toggleMobileMenu}
               style={{color: 'white', touchAction: 'manipulation'}}
               aria-label="Open the menu">
-              <MenuIcon aria-hidden={true} />
+              <MenuIcon toggleOpenClose={mobileMenuOpen} aria-hidden={true} />
             </button>
           </Mobile>
 

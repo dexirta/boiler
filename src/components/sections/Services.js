@@ -219,8 +219,8 @@ const GridFour = styled.div`
   }
 `
 const CalloutImgWrapper = styled.figure`
-  max-width: 140px;
   width: 100%;
+  max-width: 140px;
   margin: 20px 0 30px;
 
   @media (max-width: ${(props) => props.theme.screen.sm}) {

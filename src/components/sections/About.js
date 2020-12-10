@@ -207,9 +207,9 @@ const SectionHeading = styled.h1`
 `
 
 const ProfileImage = styled.figure`
-  margin: 0;
-  max-width: 720px;
   width: 100%;
+  max-width: 720px;
+  margin: 0;
 `
 
 export default About

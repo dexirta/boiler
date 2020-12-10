@@ -143,7 +143,6 @@ const GlobalStyles = createGlobalStyle`
     background: ${(props) => props.theme.color.white.primary};
   }
 
-
   @media (max-width: ${(props) => props.theme.screen.md}) {
     h1 {font-size: 60px !important; line-height: 4rem !important}
     h2 {font-size: 34px !important; line-height: 2rem!important}
