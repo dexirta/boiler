@@ -7,9 +7,6 @@ const normalize = `
 const GlobalStyles = createGlobalStyle`
   ${normalize};
 
-
-  @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;800&display=swap');
-
   body {
     font-family: ${(props) => props.theme.font.primary};
   }
