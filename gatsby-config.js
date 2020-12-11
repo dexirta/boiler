@@ -2,6 +2,7 @@ const path = require('path')
 
 module.exports = {
   plugins: [
+    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-svgr`,
@@ -50,13 +51,14 @@ module.exports = {
         icon: `static/favicon.svg`,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Darker Grotesque\:500,800`],
-        display: 'swap',
-      },
-    },
+
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [`Darker Grotesque\:500,800`],
+    //     display: 'swap',
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
