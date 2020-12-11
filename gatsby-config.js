@@ -86,8 +86,12 @@ module.exports = {
         defer: true,
       },
     },
+    `gatsby-plugin-preload-fonts`,
     {
-      resolve: `gatsby-plugin-preload-fonts`,
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`],
+      },
     },
   ],
 }
