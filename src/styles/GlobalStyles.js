@@ -5,7 +5,7 @@ const normalize = `
 `
 
 const GlobalStyles = createGlobalStyle`
- @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;800&display=swap');
   ${normalize};
 
   body {
