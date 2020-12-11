@@ -50,6 +50,12 @@ module.exports = {
         icon: `static/favicon.svg`,
       },
     },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`],
+      },
+    },
 
     // {
     //   resolve: `gatsby-plugin-google-fonts`,
@@ -87,11 +93,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-preload-fonts`,
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: [`/`],
-      },
-    },
   ],
 }
