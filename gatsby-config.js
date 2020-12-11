@@ -88,9 +88,6 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-preload-fonts`,
-      options: {
-        crossOrigin: `use-credentials`,
-      },
     },
   ],
 }
