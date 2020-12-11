@@ -2,7 +2,6 @@ const path = require('path')
 
 module.exports = {
   plugins: [
-    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-svgr`,
@@ -85,6 +84,12 @@ module.exports = {
         // Delays sending pageview hits on route update (in milliseconds)
         pageTransitionDelay: 0,
         defer: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-preload-fonts`,
+      options: {
+        crossOrigin: `use-credentials`,
       },
     },
   ],
