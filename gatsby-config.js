@@ -51,8 +51,6 @@ module.exports = {
       },
     },
 
-    `gatsby-plugin-offline`,
-
     // {
     //   resolve: `gatsby-plugin-google-fonts`,
     //   options: {
@@ -89,5 +87,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-offline`,
   ],
 }
