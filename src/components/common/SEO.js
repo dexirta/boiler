@@ -60,21 +60,6 @@ const SEO = () => {
       <meta name="author" content={SEO_DATA.author} />
       <title>{SEO_DATA.title}</title>
       <html lang="en" />
-      <link
-        rel="preload"
-        as="font"
-        type="font/woff2"
-        href="./../../static/fonts/Darker_Grotesque/darker-grotesque-v2-latin-500.woff2"
-        crossorigin
-      />
-
-      <link
-        rel="preload"
-        as="font"
-        type="font/woff2"
-        href="./../../static/fonts/Darker_Grotesque/darker-grotesque-v2-latin-800.woff2"
-        crossorigin
-      />
     </Helmet>
   )
 }
