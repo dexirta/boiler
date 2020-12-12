@@ -50,6 +50,7 @@ module.exports = {
         icon: `static/favicon.svg`,
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
