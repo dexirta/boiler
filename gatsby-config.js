@@ -51,6 +51,8 @@ module.exports = {
         icons: [
           {
             src: `static/favicon.svg`,
+            sizes: `196x196`,
+            type: `svg`,
             purpose: `any maskable`,
           },
         ],
