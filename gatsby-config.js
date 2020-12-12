@@ -47,7 +47,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#302E63`,
         display: `minimal-ui`,
-        icons: [
+        icon: [
           {
             src: `static/favicon.svg`,
             purpose: `any maskable`,
