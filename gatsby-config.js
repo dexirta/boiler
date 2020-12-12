@@ -47,10 +47,22 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#302E63`,
         display: `minimal-ui`,
-        icon: `static/favicon.svg`,
+        icons: [
+          {
+            src: `static/favicon.svg`,
+            purpose: `any maskable`,
+          },
+        ],
       },
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        workboxConfig: {
+          importWorkboxFrom: `cdn`,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
