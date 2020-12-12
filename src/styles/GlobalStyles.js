@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
 
 /* vietnamese */
 @font-face {
+  font-display: swap;
   font-family: 'Darker Grotesque';
   font-style: normal;
   font-weight: 500;
@@ -22,6 +23,7 @@ const GlobalStyles = createGlobalStyle`
 }
 /* latin-ext */
 @font-face {
+  font-display: swap;
   font-family: 'Darker Grotesque';
   font-style: normal;
   font-weight: 500;
@@ -30,6 +32,7 @@ const GlobalStyles = createGlobalStyle`
 }
 /* latin */
 @font-face {
+  font-display: swap;
   font-family: 'Darker Grotesque';
   font-style: normal;
   font-weight: 500;
@@ -38,6 +41,7 @@ const GlobalStyles = createGlobalStyle`
 }
 /* vietnamese */
 @font-face {
+  font-display: swap;
   font-family: 'Darker Grotesque';
   font-style: normal;
   font-weight: 800;
@@ -46,6 +50,7 @@ const GlobalStyles = createGlobalStyle`
 }
 /* latin-ext */
 @font-face {
+  font-display: swap;
   font-family: 'Darker Grotesque';
   font-style: normal;
   font-weight: 800;
@@ -54,6 +59,7 @@ const GlobalStyles = createGlobalStyle`
 }
 /* latin */
 @font-face {
+  font-display: swap;
   font-family: 'Darker Grotesque';
   font-style: normal;
   font-weight: 800;

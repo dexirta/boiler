@@ -1,7 +1,7 @@
 {
-  "name": "zoli-portfolio",
+  "name": "zoltan-papp-senior-applications-engineer",
   "private": true,
-  "description": "Portfolio page",
+  "description": "Zoltan Papp portfolio page",
   "version": "0.1.0",
   "author": "Dezso Szabo <zpmenergy@gmail.com>",
   "dependencies": {
