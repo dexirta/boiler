@@ -1,6 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import darker_grotesque_v2_latin_500_woff2 from '@static/fonts/Darker_Grotesque/darker-grotesque-v2-latin-500.woff2'
+import darker_grotesque_v2_latin_800_woff2 from '@static/fonts/Darker_Grotesque/darker-grotesque-v2-latin-800.woff2'
+
 const SEO_DATA = {
   description: 'Senior application engineer',
   title: 'Zoltan Papp',
@@ -60,21 +63,9 @@ const SEO = () => {
       <meta name="author" content={SEO_DATA.author} />
       <title>{SEO_DATA.title}</title>
       <html lang="en" />
-      <link
-        rel="preload"
-        as="font"
-        type="font/woff2"
-        href="static/fonts/Darker_Grotesque/darker-grotesque-v2-latin-500.woff2"
-        crossorigin
-      />
+      <link rel="preload" as="font" type="font/woff2" href={darker_grotesque_v2_latin_500_woff2} crossorigin />
 
-      <link
-        rel="preload"
-        as="font"
-        type="font/woff2"
-        href="static/fonts/Darker_Grotesque/darker-grotesque-v2-latin-800.woff2"
-        crossorigin
-      />
+      <link rel="preload" as="font" type="font/woff2" href={darker_grotesque_v2_latin_800_woff2} crossorigin />
     </Helmet>
   )
 }
