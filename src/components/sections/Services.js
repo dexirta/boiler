@@ -103,7 +103,7 @@ const Services = () => (
                     return (
                       <div key={alt}>
                         <CalloutImgWrapper key={alt}>{image()}</CalloutImgWrapper>
-                        <p>{text}</p>
+                        <div>{text}</div>
                       </div>
                     )
                   })}
@@ -154,9 +154,9 @@ const GridThree = styled.div`
 
   .link {
     transition: none;
-    border-bottom: 2px solid ${(props) => props.theme.color.white.primary};
+    border-bottom: 1px solid ${(props) => props.theme.color.white.primary};
     &:hover {
-      border-bottom: 2px solid ${(props) => props.theme.color.secondary};
+      border-bottom: 1px solid ${(props) => props.theme.color.secondary};
     }
     &:after {
       display: none;
@@ -189,7 +189,8 @@ const GridFour = styled.div`
   justify-items: start;
   padding: 80px 0;
 
-  p {
+  div {
+    padding-bottom: 1rem;
     ${(props) => props.theme.font_size.large};
     line-height: 48px;
     color: ${(props) => props.theme.color.white.primary};
@@ -200,13 +201,15 @@ const GridFour = styled.div`
     padding-bottom: 60px;
     grid-template-columns: 2fr 2fr;
 
-    p {
-      ${(props) => props.theme.font_size.large};
-      line-height: 48px;
+    div {
+      padding-bottom: 0;
+      ${(props) => props.theme.font_size.regular};
+      line-height: 38px;
     }
 
     figure {
       max-width: 80px;
+      margin: 10px 0 10px;
     }
   }
 

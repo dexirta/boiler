@@ -53,7 +53,7 @@ const TabWrapper = styled.div`
   .tab-list {
     display: flex;
     padding: 0;
-    margin: 60px 0;
+    margin: 60px 0 40px;
   }
 
   .tab-list-item {
@@ -79,6 +79,12 @@ const TabWrapper = styled.div`
 
   .tab-list-active {
     border-color: ${(props) => props.theme.color.secondary};
+  }
+
+  @media (max-width: ${(props) => props.theme.screen.md}) {
+    .tab-list {
+      margin: 20px 0;
+    }
   }
 `
 
