@@ -50,14 +50,6 @@ module.exports = {
         icon: `static/favicon.svg`,
       },
     },
-
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [`Darker Grotesque\:500,800`],
-    //     display: 'swap',
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
@@ -86,6 +78,5 @@ module.exports = {
         defer: true,
       },
     },
-    `gatsby-plugin-preload-fonts`,
   ],
 }

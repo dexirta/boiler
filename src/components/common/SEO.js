@@ -60,11 +60,6 @@ const SEO = () => {
       <meta name="author" content={SEO_DATA.author} />
       <title>{SEO_DATA.title}</title>
       <html lang="en" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;800&display=swap"
-        rel="stylesheet"
-      />
     </Helmet>
   )
 }
