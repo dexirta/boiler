@@ -7,7 +7,6 @@ import Services from '@sections/Services'
 import Projects from '@sections/Projects'
 import Footer from '@sections/Footer'
 import About from '../components/sections/About'
-import '../styles/fonts.css'
 
 const IndexPage = () => (
   <Layout>
