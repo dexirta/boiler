@@ -48,14 +48,6 @@ module.exports = {
         theme_color: `#302E63`,
         display: `minimal-ui`,
         icon: `static/favicon.svg`,
-        icons: [
-          {
-            src: `static/favicon.svg`,
-            sizes: `196x196`,
-            type: `svg`,
-            purpose: `any maskable`,
-          },
-        ],
       },
     },
     {
