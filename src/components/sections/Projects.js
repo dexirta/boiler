@@ -281,7 +281,7 @@ const SectionHeading = styled.h1`
   ${(props) => props.theme.font_size.xlarge};
 
   @media (max-width: ${(props) => props.theme.screen.md}) {
-    margin-top: 80px;
+    margin-top: 0.5rem;
   }
 `
 
