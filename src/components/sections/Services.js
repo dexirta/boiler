@@ -41,6 +41,42 @@ const LINKS = {
   title: 'Fellow freelancer peers',
 }
 
+const SERVICES = [
+  {
+    title: 'Consultancy',
+    content: () => <p>Radio link system level design and regulatory aspects for future or existing IoT products.</p>,
+  },
+  {
+    title: 'Regulatory compliance',
+    content: () => <p>Validating your product against the relevant RF/EMC regulatory standards.</p>,
+  },
+  {
+    title: 'Measurement & validation',
+    content: () => <p>Assisting clients with interpreting, implementing and automating RF measurement procedures.</p>,
+  },
+  {
+    title: 'Debugging',
+    content: () => (
+      <p>Helping you finding the root cause of performance issues or failing RF/EMC regulatory testing.</p>
+    ),
+  },
+  {
+    title: 'Design',
+    content: () => (
+      <p>
+        Full IoT radio connectivity design from hardware to firmware with my{' '}
+        <ExternalLink className={`link`} href={LINKS.url} title={LINKS.title}>
+          fellow freelancer peers.
+        </ExternalLink>
+      </p>
+    ),
+  },
+  {
+    title: 'Documentation',
+    content: () => <p>Consise and tidy writing of measurement reports, technical reports or application notes.</p>,
+  },
+]
+
 const Services = () => (
   <StaticQuery
     query={graphql`
@@ -65,35 +101,12 @@ const Services = () => (
             <Container>
               <SectionHeading>Services</SectionHeading>
               <GridThree>
-                <div>
-                  <h2>Consultancy</h2>
-                  <p>Radio link system level design and regulatory aspects for future or existing IoT products.</p>
-                </div>
-                <div>
-                  <h2>Regulatory compliance</h2>
-                  <p>Validating your product against the relevant RF/EMC regulatory standards.</p>
-                </div>
-                <div>
-                  <h2>Measurement & validation</h2>
-                  <p>Assisting clients with interpreting, implementing and automating RF measurement procedures.</p>
-                </div>
-                <div>
-                  <h2>Debugging</h2>
-                  <p>Helping you finding the root cause of performance issues or failing RF/EMC regulatory testing.</p>
-                </div>
-                <div>
-                  <h2>Design</h2>
-                  <p>
-                    Full IoT radio connectivity design from hardware to firmware with my{' '}
-                    <ExternalLink className={`link`} href={LINKS.url} title={LINKS.title}>
-                      fellow freelancer peers.
-                    </ExternalLink>
-                  </p>
-                </div>
-                <div>
-                  <h2>Documentation</h2>
-                  <p>Consise and tidy writing of measurement reports, technical reports or application notes.</p>
-                </div>
+                {SERVICES.map(({title, content}) => (
+                  <div key={title}>
+                    <h2>{title}</h2>
+                    {content()}
+                  </div>
+                ))}
               </GridThree>
             </Container>
             <Background>
@@ -103,7 +116,7 @@ const Services = () => (
                     return (
                       <div key={alt}>
                         <CalloutImgWrapper key={alt}>{image()}</CalloutImgWrapper>
-                        <div>{text}</div>
+                        {text}
                       </div>
                     )
                   })}
@@ -187,25 +200,19 @@ const GridFour = styled.div`
   grid-gap: 80px;
   align-items: top;
   justify-items: start;
-  padding: 80px 0;
+  padding: 80px 0 120px;
 
-  div {
-    padding-bottom: 1rem;
-    ${(props) => props.theme.font_size.large};
-    line-height: 48px;
-    color: ${(props) => props.theme.color.white.primary};
-  }
+  ${(props) => props.theme.font_size.large};
+  line-height: 48px;
+  color: ${(props) => props.theme.color.white.primary};
 
   @media (max-width: ${(props) => props.theme.screen.md}) {
     padding-top: 60px;
     padding-bottom: 60px;
     grid-template-columns: 2fr 2fr;
 
-    div {
-      padding-bottom: 0;
-      ${(props) => props.theme.font_size.regular};
-      line-height: 38px;
-    }
+    ${(props) => props.theme.font_size.regular};
+    line-height: 38px;
 
     figure {
       max-width: 80px;

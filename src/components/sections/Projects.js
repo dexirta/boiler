@@ -5,12 +5,13 @@ import {Section, Container} from '@components/global'
 
 import AccordionItem from '@common/AccordionItem'
 import Tabs from '@common/Tabs'
+import {Wrapper} from '../common/AccordionItem/style'
 
 const MEASUREMENTS = [
   {
     title: 'Data collection systems',
     content: () => (
-      <>
+      <div>
         I have done this multiple times in my career. DUTs were always RF transceiver ICs. The data collection setup was
         a set of rack based (mostly RF) instruments augmented with a temperature forcing device. The DUTs were hooked up
         to the various measurement devices via switch matrices (RF, Baseband and DC) so all the required (Tx, Rx, DC,
@@ -19,13 +20,13 @@ const MEASUREMENTS = [
         purposes. <br /> <br />
         <i>Skills: Automated measurements, LabView, Agilent Vee, Matlab</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'Antenna diversity algorithm',
     content: () => (
-      <>
+      <div>
         Rx side spatial antenna diversity performance comes down to two most important factors: how much improvement it
         brings to link budget in a fading prone environment and what is the shortest training sequence (hence lowest
         power consumption penalty) it can robustly run on. I led the activity of fine tuning algorithm parameters with
@@ -34,13 +35,13 @@ const MEASUREMENTS = [
         <br /> <br />
         <i>Skills: Automated measurements, Agilent Vee, Signal processing</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'Fast signal detection algorithm',
     content: () => (
-      <>
+      <div>
         One of the TRX IC products I worked on offered a rather novel fast signal detection capability that had
         attractive benefits: faster Rx channel scan turnaround times, lower Rx current consumption via duty cycling the
         device between Rx and idle states. I supervised performance validation and enhancements on the algorithm to
@@ -49,13 +50,13 @@ const MEASUREMENTS = [
         <br /> <br />
         <i>Skills: Automated measurements, Agilent Vee, Signal processing</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'Intermittent Rx malfunction',
     content: () => (
-      <>
+      <div>
         One of the PXI based RF generator test setup I was working on started producing intermittent Rx packet losses we
         could not quite explain with the DUT behavior. After instrumenting up the generator the dropped packets clearly
         correlated to a mid-packet frequency pull on the test signal. These, as turned out soon, were induced by the
@@ -64,13 +65,13 @@ const MEASUREMENTS = [
         <br /> <br />
         <i>Skills: Automated measurements, Agilent Vee, PXI instrumentation</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'Best Rx performance',
     content: () => (
-      <>
+      <div>
         In this rather demanding project the Rx performance had to be optimized simultaneously meeting stringent
         requirements on sensitivity, frequency offset tolerance, data rate offset tolerance, selectivity, blocking and
         resilience in packet collision events. Since optimizing for one may hit another this project was all about
@@ -79,7 +80,7 @@ const MEASUREMENTS = [
         <br /> <br />
         <i>Skills: Automated measurements, Agilent Vee, Radio architectures</i>
         <br />
-      </>
+      </div>
     ),
   },
 ]
@@ -88,7 +89,7 @@ const APPLICATIONSOLUTION = [
   {
     title: 'Rx channel hopping',
     content: () => (
-      <>
+      <div>
         A crucial parameter at any Rx frequency scanning application (rather popular in the US under FCC 15.247) is the
         minimum time the device can complete a full scan over. On this occasion our solution had ways to go to meet the
         specification from the customer. A significant time was taken up by relocking the tuner at each frequency hop
@@ -97,13 +98,13 @@ const APPLICATIONSOLUTION = [
         <br /> <br />
         <i>Skills: Automated measurements, Radio architectures, Signal processing</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'Self desensitisation',
     content: () => (
-      <>
+      <div>
         This debug work was carried out on an cellular 3G FDD TRx IC. It exhibited intermittent Rx desensitization in
         the application from its own transmissions at power levels previous static measurements indicated would still be
         safe. After building a dynamic measurement setup that emulated application behavior it turned out that desense
@@ -112,13 +113,13 @@ const APPLICATIONSOLUTION = [
         <br /> <br />
         <i>Skills: Radio architectures</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'Poor throughput',
     content: () => (
-      <>
+      <div>
         This project had an interesting angle where the issue reported by the customer simply could not be reproduced at
         our premises. The issue itself was significantly lower throughput than on the customer’s legacy product. A visit
         onsite revealed that the radio environment was hugely different to ours which manifested itself in a 10 MHz wide
@@ -128,13 +129,13 @@ const APPLICATIONSOLUTION = [
         <br /> <br />
         <i>Skills: Radio architectures, Signal processing</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'Channel Cross Talk',
     content: () => (
-      <>
+      <div>
         The end product Rx radio application in this project scanned multiple channels in multiple frequency bands.
         Intermittent packet drops were observed in nearly the whole power dynamic range when high band signals were sent
         to the device. I supervised the investigation that proved the root cause to be spurious reception in high band
@@ -143,13 +144,13 @@ const APPLICATIONSOLUTION = [
         <br /> <br />
         <i>Skills: Radio architectures</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'IQ samples for various SW demodulators',
     content: () => (
-      <>
+      <div>
         Although the radio IC product in question could support providing IQ samples by default I still had many tasks
         to complete to make it work for various customer requirements. I performed extensive testing for finding the
         practical bandwidth boundaries, meticulous calculations to synthesize the exact required sampling frequencies
@@ -158,7 +159,7 @@ const APPLICATIONSOLUTION = [
         <br /> <br />
         <i>Skills: Radio architectures, Signal processing</i>
         <br />
-      </>
+      </div>
     ),
   },
 ]
@@ -167,7 +168,7 @@ const REGULATORY = [
   {
     title: 'Contributing to ETSI standards',
     content: () => (
-      <>
+      <div>
         I actively took part in ETSI’s ERM TG28 as a delegate of my company for a few years. I submitted many technical
         proposals and participated in discussions and meetings. The technical work was mostly related to ETSI EN 300-220
         at the time when all standards got updated to the RED mandate. Some of my measurement proposals (i.e., Transient
@@ -176,13 +177,13 @@ const REGULATORY = [
         <br /> <br />
         <i>Skills: ETSI ISM band standards</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'ARIB T-108 compliance',
     content: () => (
-      <>
+      <div>
         ARIB T108 is the leading regulatory standard in the Japanese subGHz market that also applies to utility metering
         applications. The standard itself is quite demanding and the measurements are often up to interpretation. This
         creates a rather challenging environment for both performing the measurements and ensuring a particular product
@@ -192,13 +193,13 @@ const REGULATORY = [
         <br /> <br />
         <i>Skills: ARIB T108, Automated measurements, Agilent Vee, Radio architectures</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'FCC part 15.247 compliance',
     content: () => (
-      <>
+      <div>
         This regulation controls the most popular sub-GHz and also the 2.4 GHz ISM band in the US and also many other
         regions that adopt it. It grants more Tx power allowance as the transmission is spread out. Spreading can happen
         either via frequency hopping or with wideband modulation. Since frequency hopping is an extra layer of
@@ -209,13 +210,13 @@ const REGULATORY = [
         <br /> <br />
         <i>Skills: FCC part 15.247, Automated measurements, Agilent Vee, Radio architectures</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'ETSI EN 301 489 EMI compliance',
     content: () => (
-      <>
+      <div>
         This regulatory standard dictates the EMC/EMI minimum requirements for radio equipment in the EEA (European
         Economic Area). The immunity test allows certain performance loss when exposed to an external EM field. Some
         manufacturers/industries go beyond and allow even less performance degradation in even higher level EM fields.
@@ -224,13 +225,13 @@ const REGULATORY = [
         <br /> <br />
         <i>Skills: ETSI ISM band standards, Radio architectures</i>
         <br />
-      </>
+      </div>
     ),
   },
   {
     title: 'ETSI category 1 Rx',
     content: () => (
-      <>
+      <div>
         Category 1 Rx performance specification by regulatory standards EN 300 220 / EN 303 406 is the most challenging
         to meet with generic ISM band transceivers. In this project the purpose was replacing a product's RF front end
         design with one of our TRX ICS for cost reduction. The process entailed analysing performance boundaries,
@@ -238,7 +239,7 @@ const REGULATORY = [
         <br /> <br />
         <i>Skills: ETSI ISM band standards, Automated measurements, Agilent Vee, Radio architectures</i>
         <br />
-      </>
+      </div>
     ),
   },
 ]
