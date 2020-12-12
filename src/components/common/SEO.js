@@ -64,7 +64,7 @@ const SEO = () => {
         rel="preload"
         as="font"
         type="font/woff2"
-        href="./static/fonts/Darker_Grotesque/darker-grotesque-v2-latin-500.woff2"
+        href="./../../static/fonts/Darker_Grotesque/darker-grotesque-v2-latin-500.woff2"
         crossorigin
       />
 
@@ -72,7 +72,7 @@ const SEO = () => {
         rel="preload"
         as="font"
         type="font/woff2"
-        href="./static/fonts/Darker_Grotesque/darker-grotesque-v2-latin-800.woff2"
+        href="./../../static/fonts/Darker_Grotesque/darker-grotesque-v2-latin-800.woff2"
         crossorigin
       />
     </Helmet>
