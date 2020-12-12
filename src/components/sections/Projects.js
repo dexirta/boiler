@@ -5,7 +5,6 @@ import {Section, Container} from '@components/global'
 
 import AccordionItem from '@common/AccordionItem'
 import Tabs from '@common/Tabs'
-import {Wrapper} from '../common/AccordionItem/style'
 
 const MEASUREMENTS = [
   {
