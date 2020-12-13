@@ -92,7 +92,7 @@ module.exports = {
           'connect-src': "'self' www.google-analytics.com 'unsafe-inline'",
           'script-src': "'self' www.google-analytics.com 'unsafe-inline'",
           'style-src': "'self' 'unsafe-inline'",
-          'img-src': "'self' 'unsafe-inline' data: www.google-analytics.com 'unsafe-inline'",
+          'img-src': "'self' data: www.google-analytics.com 'unsafe-inline'",
         },
       },
     },
