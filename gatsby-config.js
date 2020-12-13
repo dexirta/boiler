@@ -87,7 +87,7 @@ module.exports = {
         reportOnly: false, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
         mergeScriptHashes: false, // you can disable scripts sha256 hashes
         mergeStyleHashes: false, // you can disable styles sha256 hashes
-        mergeDefaultDirectives: true,
+        mergeDefaultDirectives: false,
         directives: {
           'connect-src': "'self' www.google-analytics.com 'unsafe-inline'",
           'script-src': "'self' 'unsafe-inline' www.google-analytics.com 'unsafe-inline'",
