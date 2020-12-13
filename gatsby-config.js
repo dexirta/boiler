@@ -89,10 +89,10 @@ module.exports = {
         mergeStyleHashes: true, // you can disable styles sha256 hashes
         mergeDefaultDirectives: true,
         directives: {
-          'connect-src': "'self' www.google-analytics.com ",
-          'script-src': "'self' www.google-analytics.com",
+          'connect-src': "'self' www.google-analytics.com 'unsafe-inline'",
+          'script-src': "'self' www.google-analytics.com 'unsafe-inline'",
           'style-src': "'self' 'unsafe-inline'",
-          'img-src': "'self' 'unsafe-inline' data: www.google-analytics.com",
+          'img-src': "'self' 'unsafe-inline' data: www.google-analytics.com 'unsafe-inline'",
           // you can add your directives or override defaults
         },
       },
