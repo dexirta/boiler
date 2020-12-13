@@ -63,6 +63,11 @@ const SEO = () => {
       <meta name="author" content={SEO_DATA.author} />
       <title>{SEO_DATA.title}</title>
       <html lang="en" />
+      <meta
+        http-equiv="Content-Security-Policy"
+        content="connect-src 'self'; default-src 'none'; img-src 'self' data:; script-src-elem 'unsafe-inline' www.google-analytics.com 'unsafe-inline'; font-src 'self'; style-src-elem 'unsafe-inline';"
+      />
+
       <link
         rel="preload"
         as="font"
