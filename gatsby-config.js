@@ -93,7 +93,6 @@ module.exports = {
           'script-src': "'self' 'unsafe-inline' www.google-analytics.com 'unsafe-inline'",
           'style-src': "'self' 'unsafe-inline'",
           'img-src': "'self' 'unsafe-inline' data: www.google-analytics.com 'unsafe-inline'",
-          // you can add your directives or override defaults
         },
       },
     },
