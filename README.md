@@ -26,4 +26,4 @@ The component `src/components/common/SEO.js` handles all meta data and SEO conte
 
 ## Styling
 
-This project uses [styled-components]() to handle styling: `src/styles/theme.js` defines the styling base and `src/styles/GlobalStyles.js` includes basic element styles along with the CSS Reset.
+This project uses [styled-components]() to handle styling: `src/styles/theme.js` defines the styling base and `src/styles/GlobalStyles.js` includes basic element styles along with the CSS Reset .
